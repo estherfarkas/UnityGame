@@ -1,0 +1,65 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class Foods : MonoBehaviour
+{
+    private GameManager gameManager;
+    public int nutritionValue;
+
+    
+
+    [SerializeField] GameObject[] rottenFoodPrefab;
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        StartCoroutine(PerishablilityTimer());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public IEnumerator PerishablilityTimer()
+    {
+
+        //replace a rotten food after X second
+        while(true)
+        {
+             
+        yield return new WaitForSeconds(10); //timer
+
+        if(this.gameObject != GameObject.FindGameObjectWithTag("RottenFood"))
+        {
+        Destroy(this.gameObject);
+        Instantiate(rottenFoodPrefab[0], gameObject.transform.position,Quaternion.identity);
+        }
+
+
+        }
+
+
+    }
+
+    /// <summary>
+    /// Sent when another object enters a trigger collider attached to this
+    /// object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+        gameManager.UpdateNutritionPoint(nutritionValue);
+    }
+
+
+
+
+}
