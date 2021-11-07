@@ -16,7 +16,7 @@ public class SpawnFood : MonoBehaviour
     void Start()
     {
         //spawn one food at the beginning
-        Instantiate ( foodPrefab, SpawnPosition(), Quaternion.identity);
+        Instantiate (foodPrefab, SpawnPosition(), Quaternion.identity);
 
         StartCoroutine(Spawn());
     }
@@ -34,7 +34,7 @@ public class SpawnFood : MonoBehaviour
         {
         yield return new WaitForSeconds(5); //timer
 
-        Instantiate ( foodPrefab, SpawnPosition(), Quaternion.identity);
+        Instantiate (foodPrefab, SpawnPosition(), Quaternion.identity);
         }
     }
 
