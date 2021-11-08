@@ -6,19 +6,18 @@ using UnityEngine;
 public class Foods : MonoBehaviour
 {
     private GameManager gameManager;
+    public AudioSource audio;
     public int nutritionValue;
-
-    
-
     [SerializeField] GameObject[] rottenFoodPrefab;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(PerishablilityTimer());
+
+        if (audio == null){
+             audio = GetComponent<AudioSource>();}
     }
 
     // Update is called once per frame
@@ -55,6 +54,7 @@ public class Foods : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
+        AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         Destroy(gameObject);
         gameManager.UpdateNutritionPoint(nutritionValue);
     }
