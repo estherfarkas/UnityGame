@@ -8,5 +8,4 @@ public class SceneLoader : MonoBehaviour
    public void sceneLoader(string level){
        SceneManager.LoadScene(level);
    }
-}
 
