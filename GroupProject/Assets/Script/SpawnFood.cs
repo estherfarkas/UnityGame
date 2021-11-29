@@ -41,8 +41,8 @@ public class SpawnFood : MonoBehaviour
     //generate random position
     Vector2 SpawnPosition()
     {
-        spawnPosX = Random.Range(-14,14);
-        spawnPosY = Random.Range(-4.5f,4.5f);
+        spawnPosX = Random.Range(-10f,10f);
+        spawnPosY = Random.Range(-5f,5f);
 
         Vector2 randomPosition = new Vector2 (spawnPosX,spawnPosY);
 
