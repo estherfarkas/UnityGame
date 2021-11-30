@@ -1011,7 +1011,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosX: 0
   spawnPosY: 0
-  foodPrefab: {fileID: 3404226953980079570, guid: 9660b35abd78ac94ea22fe5f9ad30307, type: 3}
+  foodPrefab:
+  - {fileID: 3404226953980079570, guid: 9660b35abd78ac94ea22fe5f9ad30307, type: 3}
+  - {fileID: 5920956254617790722, guid: dcca2e4138db441bd93dbad44ef18d4e, type: 3}
+  - {fileID: 3074150953950114447, guid: 6ae240a4dd65744abb427af2e1618faa, type: 3}
+  - {fileID: 8979750141973975335, guid: 9a9b68e00d2b14db39d353cdf698dfd6, type: 3}
 --- !u!4 &1678436877
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class SpawnFood : MonoBehaviour
 {
     public float spawnPosX;
     public float spawnPosY;
-    [SerializeField] GameObject foodPrefab;
+    [SerializeField] GameObject [] foodPrefab;
 
 
     
@@ -16,7 +16,7 @@ public class SpawnFood : MonoBehaviour
     void Start()
     {
         //spawn one food at the beginning
-        Instantiate (foodPrefab, SpawnPosition(), Quaternion.identity);
+        Instantiate (foodPrefab[0], SpawnPosition(), Quaternion.identity);
 
         StartCoroutine(Spawn());
     }
@@ -32,9 +32,9 @@ public class SpawnFood : MonoBehaviour
     {
         while(true)
         {
-        yield return new WaitForSeconds(5); //timer
-
-        Instantiate (foodPrefab, SpawnPosition(), Quaternion.identity);
+        yield return new WaitForSeconds(2); //timer
+        int foodNumber = Random.Range(0, 4);
+        Instantiate (foodPrefab[foodNumber], SpawnPosition(), Quaternion.identity);
         }
     }
 
