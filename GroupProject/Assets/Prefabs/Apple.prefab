@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6552769733109486776}
   m_Layer: 5
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3404226953980079570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5623, y: -0.4286, z: 0}
-  m_LocalScale: {x: 0.183787, y: 0.195602, z: 1}
+  m_LocalPosition: {x: 0.495, y: -0.497, z: 0}
+  m_LocalScale: {x: 0.2543442, y: 0.25626168, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23551512, y: -0.05132556}
+  m_Offset: {x: -0.08721137, y: -0.051879287}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.88128, y: 4.6218867}
+  m_Size: {x: 3.623653, y: 3.9592202}
   m_EdgeRadius: 0
 --- !u!114 &6552769733109486776
 MonoBehaviour:
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 651429761133041396, guid: 173e89f9021104341b2d4957b48535ca, type: 3}
   nutritionValue: 10
-  rottenFoodPrefab:
-  - {fileID: 1369381059722177827, guid: e6e8003f503126c49b6088d5686675ea, type: 3}
+  timer: 10
+  rottenFoodPrefab: {fileID: 1369381059722177827, guid: e6e8003f503126c49b6088d5686675ea, type: 3}

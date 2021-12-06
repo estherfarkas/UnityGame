@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9005600397979567903}
   m_Layer: 5
   m_Name: Milk
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 651429761133041396, guid: 173e89f9021104341b2d4957b48535ca, type: 3}
   nutritionValue: 10
-  rottenFoodPrefab:
-  - {fileID: 4876294042668409035, guid: 19a91c8fa06af4aa09f37e3f78e2dde9, type: 3}
+  timer: 10
+  rottenFoodPrefab: {fileID: 4876294042668409035, guid: 19a91c8fa06af4aa09f37e3f78e2dde9, type: 3}

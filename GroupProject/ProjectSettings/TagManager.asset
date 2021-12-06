@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RottenFood
   - Border
+  - Food
   layers:
   - Default
   - TransparentFX

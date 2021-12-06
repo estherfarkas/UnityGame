@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5609809310915811810}
   m_Layer: 5
   m_Name: Bread
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5920956254617790722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.59, y: -0.03, z: 0}
-  m_LocalScale: {x: 0.18, y: 0.19, z: 1}
+  m_LocalPosition: {x: -8.4963, y: -0.4807, z: 0}
+  m_LocalScale: {x: 0.12648864, y: 0.13969968, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23551512, y: -0.05132556}
+  m_Offset: {x: -0.010626316, y: -0.01314652}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.88128, y: 4.6218867}
+  m_Size: {x: 7.6923647, y: 6.836255}
   m_EdgeRadius: 0
 --- !u!114 &5609809310915811810
 MonoBehaviour:
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 651429761133041396, guid: 173e89f9021104341b2d4957b48535ca, type: 3}
   nutritionValue: 15
-  rottenFoodPrefab:
-  - {fileID: 4498957012303633974, guid: c5d00b35335014b08b8cc09b49615697, type: 3}
+  timer: 10
+  rottenFoodPrefab: {fileID: 4498957012303633974, guid: c5d00b35335014b08b8cc09b49615697, type: 3}

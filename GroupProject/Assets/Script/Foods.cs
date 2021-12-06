@@ -8,7 +8,10 @@ public class Foods : MonoBehaviour
     private GameManager gameManager;
     public AudioSource audio;
     public int nutritionValue;
-    [SerializeField] GameObject[] rottenFoodPrefab;
+
+    public int timer;
+    
+    [SerializeField] GameObject rottenFoodPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +36,14 @@ public class Foods : MonoBehaviour
         while(true)
         {
              
-        yield return new WaitForSeconds(10); //timer
+        yield return new WaitForSeconds(timer); //timer
 
-        if(this.gameObject != GameObject.FindGameObjectWithTag("RottenFood"))
+        if(this.gameObject == GameObject.FindGameObjectWithTag("Food"))
         {
         Destroy(this.gameObject);
-        Instantiate(rottenFoodPrefab[0], gameObject.transform.position,Quaternion.identity);
+        Instantiate(rottenFoodPrefab, gameObject.transform.position,Quaternion.identity);
+        
+        gameManager.UpdateWasteCounter();
         }
 
 
@@ -54,9 +59,14 @@ public class Foods : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(GameObject.FindGameObjectWithTag("Player"))
+        {
+
         AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         Destroy(gameObject);
         gameManager.UpdateNutritionPoint(nutritionValue);
+
+        }
     }
 
 

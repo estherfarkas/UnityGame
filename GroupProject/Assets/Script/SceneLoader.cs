@@ -9,3 +9,4 @@ public class SceneLoader : MonoBehaviour
        SceneManager.LoadScene(level);
    }
 
+}

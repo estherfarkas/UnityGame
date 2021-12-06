@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369381059722177827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4844, y: -0.5041, z: 0}
-  m_LocalScale: {x: 0.21, y: 0.21, z: 1}
+  m_LocalPosition: {x: 6.5454, y: -0.4894, z: 0}
+  m_LocalScale: {x: 0.1405031, y: 0.11076362, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.061522365, y: 0.08202934}
+  m_Offset: {x: 0.050000668, y: -0.04681301}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.583906, y: 4.527235}
+  m_Size: {x: 6.2339306, y: 9.165556}
   m_EdgeRadius: 0
 --- !u!114 &2294696982232663526
 MonoBehaviour:
@@ -147,4 +147,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 4224623705239591073, guid: 0e8e97404c3b146f4a81db836589c036, type: 3}
   nutritionValue: -5
-  rottenFoodPrefab: []
+  timer: 30
+  rottenFoodPrefab: {fileID: 0}
