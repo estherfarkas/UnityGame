@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
    public void UpdateNutritionPoint(int pointToAdd)
     {
         nutritionPoint += pointToAdd;
+        PersistantData.Instance.SetScore(nutritionPoint);
         nutritionText.text = "Nutrition Points: " + nutritionPoint;
 
         Debug.Log(nutritionPoint);
