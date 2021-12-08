@@ -44,6 +44,7 @@ public class Foods : MonoBehaviour
         Instantiate(rottenFoodPrefab, gameObject.transform.position,Quaternion.identity);
         
         gameManager.UpdateWasteCounter();
+
         }
 
 
@@ -59,7 +60,7 @@ public class Foods : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(GameObject.FindGameObjectWithTag("Player"))
+        if(other.gameObject == GameObject.FindGameObjectWithTag("Player"))
         {
 
         AudioSource.PlayClipAtPoint(audio.clip, transform.position);

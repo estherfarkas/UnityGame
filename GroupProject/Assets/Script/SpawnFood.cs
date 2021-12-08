@@ -33,7 +33,7 @@ public class SpawnFood : MonoBehaviour
         while(true)
         {
         yield return new WaitForSeconds(2); //timer
-        int foodNumber = Random.Range(0, 3);
+        int foodNumber = Random.Range(0, 4);
         Instantiate (foodPrefab[foodNumber], SpawnPosition(), Quaternion.identity);
         }
     }
