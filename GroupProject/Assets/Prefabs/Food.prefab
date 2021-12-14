@@ -147,5 +147,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 651429761133041396, guid: 173e89f9021104341b2d4957b48535ca, type: 3}
   nutritionValue: 10
+<<<<<<< Updated upstream:GroupProject/Assets/Prefabs/Food.prefab
   rottenFoodPrefab:
   - {fileID: 1369381059722177827, guid: e6e8003f503126c49b6088d5686675ea, type: 3}
+=======
+  perishablilityTimer: 10
+  timer: 5
+  rottenFoodPrefab: {fileID: 1369381059722177827, guid: e6e8003f503126c49b6088d5686675ea, type: 3}
+>>>>>>> Stashed changes:GroupProject/Assets/Prefabs/Apple.prefab

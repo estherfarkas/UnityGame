@@ -7,8 +7,18 @@ public class Foods : MonoBehaviour
 {
     private GameManager gameManager;
     public AudioSource audio;
+<<<<<<< Updated upstream
     public int nutritionValue;
     [SerializeField] GameObject[] rottenFoodPrefab;
+=======
+    [SerializeField] public int nutritionValue;
+
+    [SerializeField] public int perishablilityTimer;
+
+    [SerializeField] public float timer;
+    
+    [SerializeField] GameObject rottenFoodPrefab;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +43,11 @@ public class Foods : MonoBehaviour
         while(true)
         {
              
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(10); //timer
+=======
+        yield return new WaitForSeconds(perishablilityTimer); //timer
+>>>>>>> Stashed changes
 
         if(this.gameObject != GameObject.FindGameObjectWithTag("RottenFood"))
         {
@@ -57,6 +71,12 @@ public class Foods : MonoBehaviour
         AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         Destroy(gameObject);
         gameManager.UpdateNutritionPoint(nutritionValue);
+<<<<<<< Updated upstream
+=======
+        gameManager.timeRemaining += timer;
+
+        }
+>>>>>>> Stashed changes
     }
 
 
