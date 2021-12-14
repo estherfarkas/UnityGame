@@ -7,14 +7,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text nutritionText;
-<<<<<<< Updated upstream
-=======
     public Text wasterCounterText;
 
     public Text timerText;
 
->>>>>>> Stashed changes
     private int nutritionPoint = 0;
+    private int wasteCounter = 0;
 
     public float timeRemaining = 60;
 
@@ -24,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UpdateNutritionPoint(0);
+        
     }
 
     // Update is called once per frame
@@ -37,12 +36,11 @@ public class GameManager : MonoBehaviour
    public void UpdateNutritionPoint(int pointToAdd)
     {
         nutritionPoint += pointToAdd;
+        PersistantData.Instance.SetScore(nutritionPoint);
         nutritionText.text = "Nutrition Points: " + nutritionPoint;
 
         Debug.Log(nutritionPoint);
     }
-<<<<<<< Updated upstream
-=======
 
     public void UpdateWasteCounter()
     {
@@ -66,18 +64,21 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        Time.timeScale = 0;
+        Debug.Log("Game OVer");
     }
 
     public void UpdateTime()
     {
         
-        Mathf.Clamp(timeRemaining, 0.0f,60.0f);
+        timeRemaining =  Mathf.Clamp(timeRemaining, 0.0f,60.0f);
+
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
 
         if(timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            timerText.text = "Time left: " + timeRemaining;
+            timerText.text = "Time left: " + seconds.ToString("00");
         }
 
         else
@@ -87,5 +88,4 @@ public class GameManager : MonoBehaviour
     }
 
     
->>>>>>> Stashed changes
 }

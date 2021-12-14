@@ -7,10 +7,6 @@ public class Foods : MonoBehaviour
 {
     private GameManager gameManager;
     public AudioSource audio;
-<<<<<<< Updated upstream
-    public int nutritionValue;
-    [SerializeField] GameObject[] rottenFoodPrefab;
-=======
     [SerializeField] public int nutritionValue;
 
     [SerializeField] public int perishablilityTimer;
@@ -18,7 +14,6 @@ public class Foods : MonoBehaviour
     [SerializeField] public float timer;
     
     [SerializeField] GameObject rottenFoodPrefab;
->>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +38,15 @@ public class Foods : MonoBehaviour
         while(true)
         {
              
-<<<<<<< Updated upstream
-        yield return new WaitForSeconds(10); //timer
-=======
         yield return new WaitForSeconds(perishablilityTimer); //timer
->>>>>>> Stashed changes
 
-        if(this.gameObject != GameObject.FindGameObjectWithTag("RottenFood"))
+        if(gameObject == GameObject.FindGameObjectWithTag("Food"))
         {
         Destroy(this.gameObject);
-        Instantiate(rottenFoodPrefab[0], gameObject.transform.position,Quaternion.identity);
+        Instantiate(rottenFoodPrefab, gameObject.transform.position,Quaternion.identity);
+        
+        gameManager.UpdateWasteCounter();
+
         }
 
 
@@ -68,15 +62,15 @@ public class Foods : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.gameObject == GameObject.FindGameObjectWithTag("Player"))
+        {
+
         AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         Destroy(gameObject);
         gameManager.UpdateNutritionPoint(nutritionValue);
-<<<<<<< Updated upstream
-=======
         gameManager.timeRemaining += timer;
 
         }
->>>>>>> Stashed changes
     }
 
 
