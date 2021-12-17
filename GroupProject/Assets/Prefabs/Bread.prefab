@@ -147,5 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 651429761133041396, guid: 173e89f9021104341b2d4957b48535ca, type: 3}
   nutritionValue: 15
-  timer: 10
+  perishablilityTimer: 8
+  timeValue: 2
   rottenFoodPrefab: {fileID: 4498957012303633974, guid: c5d00b35335014b08b8cc09b49615697, type: 3}

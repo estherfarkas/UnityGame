@@ -49,12 +49,14 @@ public class PopUps : MonoBehaviour
             popUpText.text = popUps[arrayValue];
             popUp.SetActive(true);  
             popUpTriggered = true;  
-            arrayValue ++;    
+            arrayValue ++; 
+            Time.timeScale = 0;  
     }
 
      public void escapePopUp(){
         popUp.SetActive(false);
         popUpTriggered = false;
+        Time.timeScale = 1;
     }
     
 }

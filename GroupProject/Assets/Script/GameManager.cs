@@ -8,8 +8,16 @@ public class GameManager : MonoBehaviour
 {
     public Text nutritionText;
     public Text wasterCounterText;
+
+    public Text timerText;
+
     private int nutritionPoint = 0;
     private int wasteCounter = 0;
+
+    public float timeRemaining = 60;
+
+    public GameObject pausePanel;
+    public GameObject gameOverPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +29,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         
+
+        UpdateTime();
     }
 
    public void UpdateNutritionPoint(int pointToAdd)
@@ -39,4 +49,45 @@ public class GameManager : MonoBehaviour
         wasterCounterText.text = "Waste Food: " + wasteCounter;
 
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        pausePanel.SetActive(true);
+    }
+
+    public void resume()
+    {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        
+    }
+
+    public void UpdateTime()
+    {
+        
+        timeRemaining =  Mathf.Clamp(timeRemaining, 0.0f,60.0f);
+
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+
+        if(timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            timerText.text = seconds.ToString("00");
+        }
+
+        else
+        {
+            GameOver();
+        }
+    }
+
+    
 }

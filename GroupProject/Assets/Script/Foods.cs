@@ -9,7 +9,9 @@ public class Foods : MonoBehaviour
     public AudioSource audio;
     public int nutritionValue;
 
-    public int timer;
+    public int perishablilityTimer;
+
+    public int timeValue;
     
     [SerializeField] GameObject rottenFoodPrefab;
 
@@ -36,7 +38,7 @@ public class Foods : MonoBehaviour
         while(true)
         {
              
-        yield return new WaitForSeconds(timer); //timer
+        yield return new WaitForSeconds(perishablilityTimer); //timer
 
         if(this.gameObject == GameObject.FindGameObjectWithTag("Food"))
         {
@@ -66,7 +68,7 @@ public class Foods : MonoBehaviour
         AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         Destroy(gameObject);
         gameManager.UpdateNutritionPoint(nutritionValue);
-
+        gameManager.timeRemaining += timeValue;
         }
     }
 
