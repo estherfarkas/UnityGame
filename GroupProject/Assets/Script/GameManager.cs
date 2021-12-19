@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -46,6 +47,8 @@ public class GameManager : MonoBehaviour
     {
         wasteCounter += 1;
         wasterCounterText.text = "Waste Food: " + wasteCounter;
+        UpdateNutritionPoint(-5);
+        PersistantData.Instance.SetWaste(wasteCounter);
 
     }
 
@@ -65,7 +68,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
-        Debug.Log("Game OVer");
+        Debug.Log("Game Over");
     }
 
     public void UpdateTime()
@@ -84,6 +87,7 @@ public class GameManager : MonoBehaviour
         else
         {
             GameOver();
+            SceneManager.LoadScene("Summary");
         }
     }
 

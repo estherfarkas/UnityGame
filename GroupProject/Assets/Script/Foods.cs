@@ -68,8 +68,6 @@ public class Foods : MonoBehaviour
         AudioSource.PlayClipAtPoint(audio.clip, transform.position);
         Destroy(gameObject);
         gameManager.UpdateNutritionPoint(nutritionValue);
-        gameManager.timeRemaining += timer;
-
         }
     }
 

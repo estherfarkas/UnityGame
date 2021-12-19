@@ -6,6 +6,7 @@ public class PersistantData : MonoBehaviour
 {
     
     [SerializeField] int playerScore;
+    [SerializeField] int playerWaste;
 
     
     public static PersistantData Instance; 
@@ -15,6 +16,7 @@ public class PersistantData : MonoBehaviour
     {
         
         playerScore = 0;
+        playerWaste = 0;
         
     }
 
@@ -41,6 +43,14 @@ public class PersistantData : MonoBehaviour
     public int GetScore()
     {
         return playerScore;
+    }
+
+    public int GetWaste(){
+        return playerWaste;
+    }
+
+    public void SetWaste(int s){
+        playerWaste = s;
     }
 
     
